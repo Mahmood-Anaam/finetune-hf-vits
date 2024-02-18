@@ -1,0 +1,54 @@
+{
+    "project_name": "my_TTS_finetuning",
+    "push_to_hub": false,
+    "hub_model_id": "my_TTS_finetuning/my_TTS_finetuning",
+    "overwrite_output_dir": true,
+    "output_dir": "../output",
+
+    "dataset_name": "../dataset/",    
+   
+    "audio_column_name": "audio", 
+    "text_column_name":"text",
+    "train_split_name": "train",
+    "eval_split_name": "eval",
+   
+    "override_speaker_embeddings": true,
+    "filter_on_speaker_id": 5251,
+
+    
+    "max_duration_in_seconds": 20,
+    "min_duration_in_seconds": 1.0,
+    "max_tokens_length": 500,
+
+    "model_name_or_path": "SeyedAli/Arabic-Speech-synthesis",
+
+    "full_generation_sample_text": "اوريه و اخليه يعرف هو حاط نفسه في مواجهة مع مين",
+    "preprocessing_num_workers": 2,
+
+    "do_train": true,
+    "num_train_epochs": 3,
+    "gradient_accumulation_steps": 1,
+    "gradient_checkpointing": false,
+    "per_device_train_batch_size": 16,
+    "learning_rate": 2e-5,
+    "adam_beta1": 0.8,
+    "adam_beta2": 0.99,
+    "warmup_ratio": 0.01,
+    "group_by_length": false,
+
+    "do_eval": true, 
+    "eval_steps": 2,
+    "per_device_eval_batch_size": 16,
+    "max_eval_samples": 2, 
+    "do_step_schedule_per_epoch": true,
+
+    "weight_disc": 3,
+    "weight_fmaps": 1,
+    "weight_gen": 1,
+    "weight_kl": 1.5,
+    "weight_duration": 1,
+    "weight_mel": 35,
+
+    "fp16": false,
+    "seed": 456
+}
