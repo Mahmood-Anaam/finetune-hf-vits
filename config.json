@@ -50,5 +50,7 @@
     "weight_mel": 35,
 
     "fp16": false,
-    "seed": 456
+    "seed": 456,
+    "not_freeze_startswith":"posterior_encoder"
+
 }

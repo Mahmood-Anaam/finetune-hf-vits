@@ -53,6 +53,16 @@ class ModelArguments:
     """
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune from.
     """
+    
+    not_freeze_startswith: str = field(
+    default="not freeze startswith ",
+    metadata={
+        "help": (
+            "not freeze startswith "
+            
+        )
+    },
+    )
 
     model_name_or_path: str = field(
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
@@ -292,6 +302,8 @@ class DataTrainingArguments:
             )
         },
     )
+    
+
 
 # DATA COLLATOR
 
@@ -811,6 +823,13 @@ def main():
         token=model_args.token,
         trust_remote_code=model_args.trust_remote_code,
     )
+    
+    #.......................freeze..............................
+    
+    for name, param in model.named_parameters():
+        if not name.startswith(model_args.not_freeze_startswith):
+            param.requires_grad = False
+    
 
     
     with training_args.main_process_first(desc="apply_weight_norm"):
