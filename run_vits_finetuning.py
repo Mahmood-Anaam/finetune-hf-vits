@@ -830,6 +830,10 @@ def main():
         if not name.startswith(model_args.not_freeze_startswith):
             param.requires_grad = False
     
+            
+    for name, param in model.named_parameters():
+        print(name," => ",param.requires_grad)
+
 
     
     with training_args.main_process_first(desc="apply_weight_norm"):
