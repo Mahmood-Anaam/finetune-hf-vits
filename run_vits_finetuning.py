@@ -55,13 +55,7 @@ class ModelArguments:
     """
     
     not_freeze_startswith: str = field(
-    default="not freeze startswith ",
-    metadata={
-        "help": (
-            "not freeze startswith "
-            
-        )
-    },
+    metadata={"help": "not freeze startswith " },
     )
 
     model_name_or_path: str = field(

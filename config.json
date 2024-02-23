@@ -29,7 +29,7 @@
     "num_train_epochs": 3,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
-    "per_device_train_batch_size": 16,
+    "per_device_train_batch_size": 6,
     "learning_rate": 2e-5,
     "adam_beta1": 0.8,
     "adam_beta2": 0.99,
@@ -38,7 +38,7 @@
 
     "do_eval": true, 
     "eval_steps": 2,
-    "per_device_eval_batch_size": 16,
+    "per_device_eval_batch_size": 6,
     "max_eval_samples": 2, 
     "do_step_schedule_per_epoch": true,
 
