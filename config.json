@@ -20,16 +20,16 @@
     "min_duration_in_seconds": 1.0,
     "max_tokens_length": 500,
 
-    "model_name_or_path": "SeyedAli/Arabic-Speech-synthesis",
+    "model_name_or_path": "facebook/mms-tts-ara",
 
     "full_generation_sample_text": "اوريه و اخليه يعرف هو حاط نفسه في مواجهة مع مين",
     "preprocessing_num_workers": 2,
 
     "do_train": true,
-    "num_train_epochs": 3,
+    "num_train_epochs": 50,
     "gradient_accumulation_steps": 1,
     "gradient_checkpointing": false,
-    "per_device_train_batch_size": 6,
+    "per_device_train_batch_size": 30,
     "learning_rate": 2e-5,
     "adam_beta1": 0.8,
     "adam_beta2": 0.99,
@@ -38,8 +38,8 @@
 
     "do_eval": true, 
     "eval_steps": 2,
-    "per_device_eval_batch_size": 6,
-    "max_eval_samples": 2, 
+    "per_device_eval_batch_size": 20,
+    "max_eval_samples": 20, 
     "do_step_schedule_per_epoch": true,
 
     "weight_disc": 3,
