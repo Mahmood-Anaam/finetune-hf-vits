@@ -735,7 +735,7 @@ def main():
         sample = batch[audio_column_name]
         audio_inputs = feature_extractor(
             sample,
-            sampling_rate=16000,
+            sampling_rate=44100,
             return_attention_mask=False,
             do_normalize=do_normalize,
         )
