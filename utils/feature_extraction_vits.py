@@ -63,7 +63,7 @@ class VitsFeatureExtractor(SequenceFeatureExtractor):
     def __init__(
         self,
         feature_size=80,
-        sampling_rate=44100,
+        sampling_rate=16000,
         hop_length=256,
         n_fft=1024,
         padding_value=0.0,

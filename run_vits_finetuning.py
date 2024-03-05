@@ -645,6 +645,7 @@ def main():
         revision=model_args.model_revision,
         token=model_args.token,
         trust_remote_code=model_args.trust_remote_code,
+        
     )
 
     feature_extractor = VitsFeatureExtractor()
@@ -668,7 +669,7 @@ def main():
     )
 
     # 6. Resample speech dataset if necessary
-    dataset_sampling_rate = 44100 #next(iter(raw_datasets.values())).features["samplerate"]
+    dataset_sampling_rate = 16000 #next(iter(raw_datasets.values())).features["samplerate"]
     if dataset_sampling_rate != feature_extractor.sampling_rate:
         with training_args.main_process_first(desc="resample"):
             raw_datasets = raw_datasets.cast_column(
@@ -735,7 +736,7 @@ def main():
         sample = batch[audio_column_name]
         audio_inputs = feature_extractor(
             sample,
-            sampling_rate=44100,
+            sampling_rate=16000,
             return_attention_mask=False,
             do_normalize=do_normalize,
         )
