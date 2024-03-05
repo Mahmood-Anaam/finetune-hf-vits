@@ -1,5 +1,5 @@
 {
-    "project_name": "my_TTS_finetuning",
+    "project_name": "posterior_encoder_02",
     "push_to_hub": false,
     "hub_model_id": "my_TTS_finetuning/my_TTS_finetuning",
     "overwrite_output_dir": true,
