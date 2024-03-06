@@ -1,5 +1,5 @@
 {
-    "project_name": "posterior_encoder_02",
+    "project_name": "posterior_encoder_03",
     "push_to_hub": false,
     "hub_model_id": "my_TTS_finetuning/my_TTS_finetuning",
     "overwrite_output_dir": true,
@@ -51,6 +51,6 @@
 
     "fp16": false,
     "seed": 456,
-    "not_freeze_startswith":"posterior_encoder"
+    "not_freeze_startswith":"!"
 
 }
