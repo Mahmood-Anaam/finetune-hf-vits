@@ -821,9 +821,9 @@ def main():
     
     #.......................freeze..............................
     
-    for name, param in model.named_parameters():
-        if not name.startswith(model_args.not_freeze_startswith):
-            param.requires_grad = False
+    # for name, param in model.named_parameters():
+    #     if not name.startswith(model_args.not_freeze_startswith):
+    #         param.requires_grad = False
     
             
     for name, param in model.named_parameters():
